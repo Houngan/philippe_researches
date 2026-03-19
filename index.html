@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'itinéraire intellectuel de Philippe Aubert | 2011–2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #0d0d0d;
+            color: #e0e0e0;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #333;
+        }
+
+        h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ===== COLOR PALETTE ===== */
+        .register-orange { color: #e07845; }
+        .register-blue { color: #5ba0d0; }
+        .register-purple { color: #c76dd7; }
+        .register-green { color: #50b88e; }
+        .register-gold { color: #d4a843; }
+
+        .bg-orange { background-color: #e07845; }
+        .bg-blue { background-color: #5ba0d0; }
+        .bg-purple { background-color: #c76dd7; }
+        .bg-green { background-color: #50b88e; }
+        .bg-gold { background-color: #d4a843; }
+
+        /* ===== HERO HEADER ===== */
+        .hero {
+            padding: 5rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+            border-bottom: 2px solid #333;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            margin-bottom: 1.5rem;
+        }
+
+        .hero .subtitle {
+            font-size: 1.2rem;
+            max-width: 900px;
+            margin: 0 auto 2rem;
+            color: #b0b0b0;
+            line-height: 1.8;
+        }
+
+        .hero .stats {
+            font-size: 0.95rem;
+            color: #888;
+            letter-spacing: 0.05em;
+        }
+
+        /* ===== STICKY LEGEND ===== */
+        .legend-bar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: rgba(13, 13, 13, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid #333;
+            margin-bottom: 3rem;
+        }
+
+        .legend-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 3rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .legend-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        /* ===== HEATMAP ===== */
+        .heatmap-section {
+            margin-bottom: 4rem;
+        }
+
+        .heatmap-wrapper {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 0;
+            margin-top: 2rem;
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 4px;
+            overflow: auto;
+        }
+
+        .heatmap-labels {
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid #333;
+        }
+
+        .heatmap-label {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #222;
+            font-size: 0.85rem;
+            min-height: 40px;
+            display: flex;
+            align-items: center;
+            background-color: #0d0d0d;
+        }
+
+        .heatmap-label:first-child {
+            padding-top: 2.5rem;
+            font-weight: 600;
+        }
+
+        .heatmap-grid-wrapper {
+            border-left: 1px solid #333;
+        }
+
+        .heatmap-header {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 0;
+            border-bottom: 2px solid #333;
+            background-color: #0d0d0d;
+        }
+
+        .heatmap-header-cell {
+            padding: 1rem 0.5rem;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-right: 1px solid #222;
+            color: #888;
+        }
+
+        .heatmap-header-cell:last-child {
+            border-right: none;
+        }
+
+        .heatmap-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 0;
+        }
+
+        .heatmap-row {
+            display: contents;
+        }
+
+        .heatmap-cell {
+            padding: 0.5rem;
+            border-right: 1px solid #222;
+            border-bottom: 1px solid #222;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+            min-height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .heatmap-cell:last-child {
+            border-right: none;
+        }
+
+        .heatmap-cell:hover {
+            transform: scale(1.08);
+            box-shadow: inset 0 0 0 2px rgba(255,255,255,0.3);
+            z-index: 10;
+        }
+
+        .heatmap-cell.empty {
+            background-color: #161616;
+            color: #444;
+            cursor: default;
+        }
+
+        .heatmap-cell.intensity-1 { background-color: rgba(224, 120, 69, 0.3); color: #e07845; }
+        .heatmap-cell.intensity-2 { background-color: rgba(224, 120, 69, 0.5); color: #e07845; }
+        .heatmap-cell.intensity-3 { background-color: rgba(224, 120, 69, 0.65); color: #fff; }
+        .heatmap-cell.intensity-4 { background-color: rgba(224, 120, 69, 0.8); color: #fff; }
+        .heatmap-cell.intensity-5 { background-color: #d4733f; color: #fff; }
+
+        .heatmap-tooltip {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.95);
+            color: #e0e0e0;
+            padding: 0.6rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            pointer-events: none;
+            white-space: nowrap;
+            z-index: 1000;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-8px);
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .heatmap-cell:hover .heatmap-tooltip {
+            opacity: 1;
+        }
+
+        /* ===== STACKED BAR CHART ===== */
+        .bar-chart-section {
+            margin-bottom: 4rem;
+        }
+
+        .evo-row { display:flex; align-items:stretch; margin-bottom:2px; }
+        .evo-year { width:60px; flex-shrink:0; font-size:0.72rem; font-weight:600; color:#a0a0a0; padding-top:8px; }
+        .evo-bar { flex:1; display:flex; gap:2px; min-height:36px; }
+        .evo-segment { border-radius:3px; position:relative; min-height:36px; opacity:0.85; transition:opacity 0.2s; }
+        .evo-segment:hover { opacity:1; }
+        .evo-segment .evo-tip { display:none; position:absolute; bottom:calc(100% + 4px); left:50%; transform:translateX(-50%); background:#1e1e1e; border:1px solid #444; padding:6px 10px; border-radius:6px; font-size:0.72rem; white-space:nowrap; z-index:10; color:#e0e0e0; pointer-events:none; }
+        .evo-segment:hover .evo-tip { display:block; }
+
+        /* ===== CONCEPT FIRST APPEARANCE ===== */
+        .concept-timeline-section {
+            margin-bottom: 4rem;
+        }
+
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .concept-year-card {
+            padding: 1.5rem;
+            background-color: #1a1a1a;
+            border-left: 3px solid;
+            border-radius: 4px;
+        }
+
+        .concept-year-card h4 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .concept-year-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .concept-year-card li {
+            margin-bottom: 0.5rem;
+            color: #b0b0b0;
+            font-size: 0.95rem;
+        }
+
+        /* ===== DETAILED TIMELINE ===== */
+        .detailed-timeline {
+            margin-bottom: 4rem;
+        }
+
+        .phase {
+            margin-bottom: 4rem;
+            padding: 2rem;
+            background-color: #1a1a1a;
+            border-left: 4px solid;
+            border-radius: 4px;
+        }
+
+        .phase.phase-1 { border-left-color: #e07845; }
+        .phase.phase-2 { border-left-color: #5ba0d0; }
+        .phase.phase-3 { border-left-color: #c76dd7; }
+        .phase.phase-4 { border-left-color: #50b88e; }
+        .phase.phase-5 { border-left-color: #d4a843; }
+        .phase.phase-6 { border-left-color: #e07845; }
+
+        .phase-title {
+            font-size: 1.5rem;
+            font-family: 'Crimson Pro', serif;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .phase-intro {
+            color: #a0a0a0;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .entry {
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background-color: #0d0d0d;
+            border-left: 3px solid #333;
+            border-radius: 3px;
+        }
+
+        .entry-date {
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+            color: #888;
+        }
+
+        .entry-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: #d4a843;
+        }
+
+        .entry-description {
+            color: #b0b0b0;
+            margin-bottom: 0.8rem;
+        }
+
+        .entry-quote {
+            margin: 1rem 0;
+            padding: 1rem 1.5rem;
+            border-left: 3px solid #e07845;
+            background-color: rgba(224, 120, 69, 0.05);
+            font-style: italic;
+            color: #d0d0d0;
+            line-height: 1.8;
+        }
+
+        .entry-concepts {
+            margin-top: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .concept-tag {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background-color: rgba(91, 160, 208, 0.15);
+            color: #5ba0d0;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(91, 160, 208, 0.3);
+        }
+
+        .concept-tag.orange { background-color: rgba(224, 120, 69, 0.15); color: #e07845; border-color: rgba(224, 120, 69, 0.3); }
+        .concept-tag.blue { background-color: rgba(91, 160, 208, 0.15); color: #5ba0d0; border-color: rgba(91, 160, 208, 0.3); }
+        .concept-tag.purple { background-color: rgba(199, 109, 215, 0.15); color: #c76dd7; border-color: rgba(199, 109, 215, 0.3); }
+        .concept-tag.green { background-color: rgba(80, 184, 142, 0.15); color: #50b88e; border-color: rgba(80, 184, 142, 0.3); }
+        .concept-tag.gold { background-color: rgba(212, 168, 67, 0.15); color: #d4a843; border-color: rgba(212, 168, 67, 0.3); }
+
+        /* ===== SYNTHESIS CARDS ===== */
+        .synthesis-section {
+            margin-bottom: 4rem;
+        }
+
+        .synthesis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .synthesis-card {
+            padding: 2rem;
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 4px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .synthesis-card:hover {
+            transform: translateY(-4px);
+            border-color: #555;
+        }
+
+        .synthesis-card h4 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .synthesis-card p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: #b0b0b0;
+        }
+
+        .synthesis-card.card-1 { border-left: 4px solid #e07845; }
+        .synthesis-card.card-2 { border-left: 4px solid #5ba0d0; }
+        .synthesis-card.card-3 { border-left: 4px solid #c76dd7; }
+        .synthesis-card.card-4 { border-left: 4px solid #50b88e; }
+        .synthesis-card.card-5 { border-left: 4px solid #d4a843; }
+        .synthesis-card.card-6 { border-left: 4px solid #e07845; }
+
+        /* ===== FOOTER ===== */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid #333;
+            color: #888;
+            font-size: 0.9rem;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* ===== RESPONSIVE — tablettes ===== */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.6rem; margin-top: 2rem; }
+            h3 { font-size: 1.3rem; }
+            h4 { font-size: 1rem; }
+
+            .hero { padding: 2.5rem 1rem; }
+            .hero .subtitle { font-size: 1rem; }
+            .hero .stats { font-size: 0.8rem; }
+
+            .container { padding: 0 1rem; }
+
+            /* Légende sticky plus compacte */
+            .legend-bar { padding: 0.9rem 1rem; }
+            .legend-content { gap: 0.7rem 1.2rem; }
+            .legend-item { font-size: 0.82rem; gap: 0.5rem; }
+            .legend-dot { width: 10px; height: 10px; }
+
+            /* Heatmap : scroll horizontal, labels plus serrés */
+            .heatmap-wrapper { grid-template-columns: 130px 1fr; }
+            .heatmap-label { font-size: 0.72rem; padding: 0.5rem 0.4rem; min-height: 32px; }
+            .heatmap-label:first-child { padding-top: 1.5rem; }
+            .heatmap-cell { min-height: 32px; font-size: 0.72rem; padding: 0.3rem; }
+            .heatmap-header-cell { font-size: 0.75rem; padding: 0.6rem 0.2rem; }
+
+            /* Barres de registres */
+            .evo-year { width: 44px; font-size: 0.65rem; }
+            .evo-bar { min-height: 30px; }
+            .evo-segment { min-height: 30px; }
+
+            /* Phases et entrées */
+            .phase { padding: 1.2rem; }
+            .entry { padding: 1rem; }
+            .entry-quote { padding: 0.8rem 1rem; font-size: 0.9rem; }
+            .entry-title { font-size: 1rem; }
+            .entry-description { font-size: 0.9rem; }
+
+            /* Grilles */
+            .synthesis-grid { grid-template-columns: 1fr; }
+            .concept-grid { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
+            .synthesis-card { padding: 1.5rem; }
+        }
+
+        /* ===== RESPONSIVE — smartphones ===== */
+        @media (max-width: 480px) {
+            h1 { font-size: 1.65rem; line-height: 1.25; }
+            h2 { font-size: 1.3rem; }
+            h3 { font-size: 1.15rem; }
+
+            .hero { padding: 2rem 1rem; }
+            .hero .subtitle { font-size: 0.9rem; }
+
+            /* Légende : empilée sur 2 colonnes */
+            .legend-bar { padding: 0.8rem 1rem; }
+            .legend-content { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+            .legend-item { font-size: 0.78rem; }
+
+            /* Heatmap encore plus compacte */
+            .heatmap-wrapper { grid-template-columns: 105px 1fr; }
+            .heatmap-label { font-size: 0.62rem; padding: 0.4rem 0.3rem; min-height: 28px; }
+            .heatmap-cell { min-height: 28px; font-size: 0.65rem; }
+            .heatmap-header-cell { font-size: 0.65rem; padding: 0.5rem 0.1rem; }
+
+            /* Barres */
+            .evo-year { width: 36px; font-size: 0.58rem; }
+            .evo-bar { min-height: 26px; gap: 1px; }
+            .evo-segment { min-height: 26px; border-radius: 2px; }
+            /* Tooltip centré pour ne pas déborder */
+            .evo-segment .evo-tip { left: 0; transform: none; white-space: normal; max-width: 160px; }
+
+            /* Phases */
+            .phase { padding: 1rem; border-left-width: 3px; }
+            .entry { padding: 0.8rem; }
+            .entry-quote { padding: 0.7rem 0.9rem; font-size: 0.85rem; }
+            .entry-date { font-size: 0.9rem; }
+            .entry-title { font-size: 0.95rem; }
+
+            /* Concepts grid : 2 colonnes fixes */
+            .concept-grid { grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+            .concept-year-card { padding: 1rem; }
+
+            .synthesis-card { padding: 1.2rem; }
+
+            footer { padding: 2rem 1rem; font-size: 0.82rem; }
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .entry {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== HERO HEADER ===== -->
+    <div class="hero">
+        <div class="container">
+            <h1>L'itinéraire intellectuel de Philippe Aubert</h1>
+            <p class="subtitle">Du témoignage personnel à la construction théorique — onze ans de discours, de textes et de prises de parole retracés à travers les concepts-clés et les citations qui jalonnent une pensée en mouvement.</p>
+            <p class="stats">2 288 documents analysés</p>
+        </div>
+    </div>
+
+    <!-- ===== STICKY LEGEND BAR ===== -->
+    <div class="legend-bar">
+        <div class="container">
+            <div class="legend-content">
+                <div class="legend-item">
+                    <div class="legend-dot bg-orange"></div>
+                    <span>Récit & témoignage</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-dot bg-blue"></div>
+                    <span>Droits & politique</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-dot bg-purple"></div>
+                    <span>Théorie & épistémologie</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-dot bg-green"></div>
+                    <span>Critique de la CAA</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-dot bg-gold"></div>
+                    <span>Singularité existentielle</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== CONCEPT HEATMAP ===== -->
+    <div class="container heatmap-section">
+        <h2>Matrice conceptuelle par année</h2>
+        <p style="margin-bottom: 2rem; color: #a0a0a0;">Intensité d'apparition des 35 concepts clés dans les écrits de Philippe (2015–2026). Passez la souris sur les cellules pour voir les occurrences exactes.</p>
+
+        <div class="heatmap-wrapper">
+            <div class="heatmap-labels">
+                <div class="heatmap-label">Concepts clés</div>
+                <div class="heatmap-label">rage d'exister</div>
+                <div class="heatmap-label">CNCPH / CQSSE</div>
+                <div class="heatmap-label">inclusion</div>
+                <div class="heatmap-label">pouvoir d'agir</div>
+                <div class="heatmap-label">éthique</div>
+                <div class="heatmap-label">autodétermination</div>
+                <div class="heatmap-label">Toulouse-Lautrec</div>
+                <div class="heatmap-label">Cerisy</div>
+                <div class="heatmap-label">vulnérabilité</div>
+                <div class="heatmap-label">émancipation</div>
+                <div class="heatmap-label">INSHEA / INS HEA</div>
+                <div class="heatmap-label">reconnaissance</div>
+                <div class="heatmap-label">fraternité</div>
+                <div class="heatmap-label">pair-expertise</div>
+                <div class="heatmap-label">dignité</div>
+                <div class="heatmap-label">recherche participative</div>
+                <div class="heatmap-label">désarroi</div>
+                <div class="heatmap-label">ISAAC</div>
+                <div class="heatmap-label">homme inutile</div>
+                <div class="heatmap-label">duo de compétences</div>
+                <div class="heatmap-label">génération vestiaire</div>
+                <div class="heatmap-label">Varela / énaction</div>
+                <div class="heatmap-label">auteur / autrice</div>
+                <div class="heatmap-label">PCH</div>
+                <div class="heatmap-label">Hannah Arendt</div>
+                <div class="heatmap-label">con-quête</div>
+                <div class="heatmap-label">première personne</div>
+                <div class="heatmap-label">singularité existentielle</div>
+                <div class="heatmap-label">épistémologie</div>
+                <div class="heatmap-label">polyhandicap</div>
+                <div class="heatmap-label">autonomie / dépendance</div>
+                <div class="heatmap-label">Stephen Hawking</div>
+                <div class="heatmap-label">bricolage</div>
+                <div class="heatmap-label">corps</div>
+                <div class="heatmap-label">CapDroits / CapLab</div>
+            </div>
+
+            <div class="heatmap-grid-wrapper">
+                <div class="heatmap-header">
+                    <div class="heatmap-header-cell">2015</div>
+                    <div class="heatmap-header-cell">2016</div>
+                    <div class="heatmap-header-cell">2017</div>
+                    <div class="heatmap-header-cell">2018</div>
+                    <div class="heatmap-header-cell">2019</div>
+                    <div class="heatmap-header-cell">2020</div>
+                    <div class="heatmap-header-cell">2021</div>
+                    <div class="heatmap-header-cell">2022</div>
+                    <div class="heatmap-header-cell">2023</div>
+                    <div class="heatmap-header-cell">2024</div>
+                    <div class="heatmap-header-cell">2025</div>
+                    <div class="heatmap-header-cell">2026</div>
+                </div>
+                <div class="heatmap-grid" id="heatmap-grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== STACKED BAR CHART ===== -->
+    <div class="container bar-chart-section">
+        <h2>Registres de discours par année</h2>
+        <p style="font-size:0.85rem; color:#a0a0a0; margin-bottom:1.5rem;">Répartition des registres discursifs par année — survolez pour voir le détail</p>
+
+        <div class="evo-row">
+            <div class="evo-year">2018</div>
+            <div class="evo-bar">
+                <div class="evo-segment" style="flex:60;background:#e07845;"><div class="evo-tip">Récit personnel (60%)</div></div>
+                <div class="evo-segment" style="flex:20;background:#5ba0d0;"><div class="evo-tip">Engagement politique &amp; droits (20%)</div></div>
+                <div class="evo-segment" style="flex:7;background:#c76dd7;"><div class="evo-tip">Théorisation &amp; philosophie (7%)</div></div>
+                <div class="evo-segment" style="flex:13;background:#50b88e;"><div class="evo-tip">Critique CAA (13%)</div></div>
+            </div>
+        </div>
+        <div class="evo-row">
+            <div class="evo-year">2019</div>
+            <div class="evo-bar">
+                <div class="evo-segment" style="flex:63;background:#e07845;"><div class="evo-tip">Récit personnel (63%)</div></div>
+                <div class="evo-segment" style="flex:31;background:#5ba0d0;"><div class="evo-tip">Engagement politique &amp; droits (31%)</div></div>
+                <div class="evo-segment" style="flex:4;background:#c76dd7;"><div class="evo-tip">Théorisation &amp; philosophie (4%)</div></div>
+                <div class="evo-segment" style="flex:2;background:#50b88e;"><div class="evo-tip">Critique CAA (2%)</div></div>
+            </div>
+        </div>
+        <div class="evo-row">
+            <div class="evo-year">2020</div>
+            <div class="evo-bar">
+                <div class="evo-segment" style="flex:35;background:#e07845;"><div class="evo-tip">Récit personnel (35%)</div></div>
+                <div class="evo-segment" style="flex:54;background:#5ba0d0;"><div class="evo-tip">Engagement politique &amp; droits (54%)</div></div>
+                <div class="evo-segment" style="flex:8;background:#c76dd7;"><div class="evo-tip">Théorisation &amp; philosophie (8%)</div></div>
+                <div class="evo-segment" style="flex:3;background:#50b88e;"><div class="evo-tip">Critique CAA (3%)</div></div>
+            </div>
+        </div>
+        <div class="evo-row">
+            <div class="evo-year">2021</div>
+            <div class="evo-bar">
+                <div class="evo-segment" style="flex:23;background:#e07845;"><div class="evo-tip">Récit personnel (23%)</div></div>
+                <div class="evo-segment" style="flex:63;background:#5ba0d0;"><div class="evo-tip">Engagement politique &amp; droits (63%)</div></div>
+                <div class="evo-segment" style="flex:12;background:#c76dd7;"><div class="evo-tip">Théorisation &amp; philosophie (12%)</div></div>
+                <div class="evo-segment" style="flex:2;background:#50b88e;"><div class="evo-tip">Critique CAA (2%)</div></div>
+            </div>
+        </div>
+        <div class="evo-row">
+            <div class="evo-year">2022</div>
+            <div class="evo-bar">
+                <div class="evo-segment" style="flex:30;background:#e07845;"><div class="evo-tip">Récit personnel (30%)</div></div>
+                <div class="evo-segment" style="flex:50;background:#5ba0d0;"><div class="evo-tip">Engagement politique &amp; droits (50%)</div></div>
+                <div class="evo-segment" style="flex:18;background:#c76dd7;"><div class="evo-tip">Théorisation &amp; philosophie (18%)</div></div>
+                <div class="evo-segment" style="flex:2;background:#50b88e;"><div class="evo-tip">Critique CAA (2%)</div></div>
+            </div>
+        </div>
+        <div class="evo-row">
+            <div class="evo-year">2023</div>
+            <div class="evo-bar">
+                <div class="evo-segment" style="flex:24;background:#e07845;"><div class="evo-tip">Récit personnel (24%)</div></div>
+                <div class="evo-segment" style="flex:48;background:#5ba0d0;"><div class="evo-tip">Engagement politique &amp; droits (48%)</div></div>
+                <div class="evo-segment" style="flex:20;background:#c76dd7;"><div class="evo-tip">Théorisation &amp; philosophie (20%)</div></div>
+                <div class="evo-segment" style="flex:8;background:#50b88e;"><div class="evo-tip">Critique CAA (8%)</div></div>
+            </div>
+        </div>
+        <div class="evo-row">
+            <div class="evo-year">2024</div>
+            <div class="evo-bar">
+                <div class="evo-segment" style="flex:31;background:#e07845;"><div class="evo-tip">Récit personnel (31%)</div></div>
+                <div class="evo-segment" style="flex:36;background:#5ba0d0;"><div class="evo-tip">Engagement politique &amp; droits (36%)</div></div>
+                <div class="evo-segment" style="flex:27;background:#c76dd7;"><div class="evo-tip">Théorisation &amp; philosophie (27%)</div></div>
+                <div class="evo-segment" style="flex:5;background:#50b88e;"><div class="evo-tip">Critique CAA (5%)</div></div>
+                <div class="evo-segment" style="flex:1;background:#d4a843;"><div class="evo-tip">Singularité existentielle (1%)</div></div>
+            </div>
+        </div>
+        <div class="evo-row">
+            <div class="evo-year">2025</div>
+            <div class="evo-bar">
+                <div class="evo-segment" style="flex:19;background:#e07845;"><div class="evo-tip">Récit personnel (19%)</div></div>
+                <div class="evo-segment" style="flex:33;background:#5ba0d0;"><div class="evo-tip">Engagement politique &amp; droits (33%)</div></div>
+                <div class="evo-segment" style="flex:33;background:#c76dd7;"><div class="evo-tip">Théorisation &amp; philosophie (33%)</div></div>
+                <div class="evo-segment" style="flex:6;background:#50b88e;"><div class="evo-tip">Critique CAA (6%)</div></div>
+                <div class="evo-segment" style="flex:9;background:#d4a843;"><div class="evo-tip">Singularité existentielle (9%)</div></div>
+            </div>
+        </div>
+        <div class="evo-row">
+            <div class="evo-year">2026</div>
+            <div class="evo-bar">
+                <div class="evo-segment" style="flex:30;background:#e07845;"><div class="evo-tip">Récit personnel (30%)</div></div>
+                <div class="evo-segment" style="flex:46;background:#5ba0d0;"><div class="evo-tip">Engagement politique &amp; droits (46%)</div></div>
+                <div class="evo-segment" style="flex:15;background:#c76dd7;"><div class="evo-tip">Théorisation &amp; philosophie (15%)</div></div>
+                <div class="evo-segment" style="flex:6;background:#50b88e;"><div class="evo-tip">Critique CAA (6%)</div></div>
+                <div class="evo-segment" style="flex:3;background:#d4a843;"><div class="evo-tip">Singularité existentielle (3%)</div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== CONCEPT FIRST APPEARANCE TIMELINE ===== -->
+    <div class="container concept-timeline-section">
+        <h2>Apparition chronologique des concepts</h2>
+        <p style="margin-bottom: 2rem; color: #a0a0a0;">Timeline d'émergence des concepts-clés au fil du temps, de 2011 à 2026. Chaque concept apparaît une première fois, puis se développe en complexité et en fréquence.</p>
+
+        <div class="concept-grid">
+            <div class="concept-year-card" style="border-left-color: #c76dd7;">
+                <h4 style="color: #c76dd7;">2011</h4>
+                <ul>
+                    <li>• Varela / énaction</li>
+                </ul>
+            </div>
+            <div class="concept-year-card" style="border-left-color: #e07845;">
+                <h4 style="color: #e07845;">2013</h4>
+                <ul>
+                    <li>• con-quête</li>
+                    <li>• corps</li>
+                    <li>• vulnérabilité</li>
+                </ul>
+            </div>
+            <div class="concept-year-card" style="border-left-color: #c76dd7;">
+                <h4 style="color: #c76dd7;">2014</h4>
+                <ul>
+                    <li>• éthique</li>
+                    <li>• épistémologie</li>
+                    <li>• première personne</li>
+                    <li>• polyhandicap</li>
+                </ul>
+            </div>
+            <div class="concept-year-card" style="border-left-color: #5ba0d0;">
+                <h4 style="color: #5ba0d0;">2015</h4>
+                <ul>
+                    <li>• Toulouse-Lautrec</li>
+                    <li>• INSHEA / INS HEA</li>
+                </ul>
+            </div>
+            <div class="concept-year-card" style="border-left-color: #e07845;">
+                <h4 style="color: #e07845;">2016</h4>
+                <ul>
+                    <li>• rage d'exister</li>
+                </ul>
+            </div>
+            <div class="concept-year-card" style="border-left-color: #5ba0d0;">
+                <h4 style="color: #5ba0d0;">2017</h4>
+                <ul>
+                    <li>• inclusion</li>
+                    <li>• fraternité</li>
+                    <li>• dignité</li>
+                    <li>• pouvoir d'agir</li>
+                    <li>• auteur / autrice</li>
+                    <li>• reconnaissance</li>
+                    <li>• PCH</li>
+                    <li>• accessibilité universelle</li>
+                    <li>• langage vs communication</li>
+                    <li>• accompagnement</li>
+                    <li>• bricolage</li>
+                </ul>
+            </div>
+            <div class="concept-year-card" style="border-left-color: #5ba0d0;">
+                <h4 style="color: #5ba0d0;">2018</h4>
+                <ul>
+                    <li>• ISAAC</li>
+                    <li>• invisibilisation</li>
+                </ul>
+            </div>
+            <div class="concept-year-card" style="border-left-color: #5ba0d0;">
+                <h4 style="color: #5ba0d0;">2019</h4>
+                <ul>
+                    <li>• Hannah Arendt</li>
+                    <li>• émancipation</li>
+                    <li>• homme inutile</li>
+                    <li>• CNCPH / CQSSE</li>
+                    <li>• Cerisy</li>
+                </ul>
+            </div>
+            <div class="concept-year-card" style="border-left-color: #c76dd7;">
+                <h4 style="color: #c76dd7;">2020</h4>
+                <ul>
+                    <li>• génération vestiaire</li>
+                    <li>• validisme</li>
+                    <li>• Stephen Hawking</li>
+                    <li>• anticipation / extrapolation</li>
+                    <li>• objet / sujet</li>
+                    <li>• autodétermination</li>
+                    <li>• désarroi</li>
+                </ul>
+            </div>
+            <div class="concept-year-card" style="border-left-color: #5ba0d0;">
+                <h4 style="color: #5ba0d0;">2021</h4>
+                <ul>
+                    <li>• désinstitutionnalisation</li>
+                    <li>• vie autonome</li>
+                    <li>• CDPH / Convention ONU</li>
+                    <li>• pair-expertise</li>
+                    <li>• pair-aidance</li>
+                    <li>• autonomie / dépendance</li>
+                    <li>• recherche participative</li>
+                    <li>• CIFRE</li>
+                    <li>• duo de compétences</li>
+                    <li>• CapDroits / CapLab</li>
+                </ul>
+            </div>
+            <div class="concept-year-card" style="border-left-color: #e07845;">
+                <h4 style="color: #e07845;">2022</h4>
+                <ul>
+                    <li>• sentiment d'exister</li>
+                    <li>• Lévi-Strauss</li>
+                </ul>
+            </div>
+            <div class="concept-year-card" style="border-left-color: #c76dd7;">
+                <h4 style="color: #c76dd7;">2023</h4>
+                <ul>
+                    <li>• savoirs situés</li>
+                    <li>• justice épistémique</li>
+                    <li>• Sartre</li>
+                    <li>• écosystème support</li>
+                    <li>• bien portant</li>
+                </ul>
+            </div>
+            <div class="concept-year-card" style="border-left-color: #d4a843;">
+                <h4 style="color: #d4a843;">2024</h4>
+                <ul>
+                    <li>• valeur de ma vie</li>
+                    <li>• existentialisme</li>
+                </ul>
+            </div>
+            <div class="concept-year-card" style="border-left-color: #d4a843;">
+                <h4 style="color: #d4a843;">2025</h4>
+                <ul>
+                    <li>• singularité existentielle</li>
+                    <li>• chrono-normativité</li>
+                    <li>• CAA à la première personne</li>
+                    <li>• habitabilité</li>
+                </ul>
+            </div>
+            <div class="concept-year-card" style="border-left-color: #5ba0d0;">
+                <h4 style="color: #5ba0d0;">2026</h4>
+                <ul>
+                    <li>• niches cognitives</li>
+                    <li>• utilisateur (critique)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== DETAILED CHRONOLOGICAL TIMELINE ===== -->
+    <div class="container detailed-timeline">
+        <h2>L'évolution détaillée : six phases d'une pensée en construction</h2>
+
+        <!-- PHASE I -->
+        <div class="phase phase-1">
+            <h3 class="phase-title">Phase I — Les fondations existentielles (2011–2016)</h3>
+            <p class="phase-intro">Philippe construit les bases philosophiques à partir de Varela/énaction (2011), la con-quête et la vulnérabilité (2013), l'éthique et l'épistémologie (2014). Le séminaire "Je serai un homme" (2015) est sa première prise de parole publique. "Rage d'exister" paraît en 2016.</p>
+
+            <div class="entry">
+                <div class="entry-date">2011</div>
+                <div class="entry-title">Découverte de Varela et l'énaction</div>
+                <div class="entry-description">Philippe s'initie aux travaux de Francisco Varela sur l'énaction — une théorie qui place la constitution du monde dans l'action du sujet. C'est le point de départ théorique de sa pensée.</div>
+                <div class="entry-concepts">
+                    <span class="concept-tag purple">Varela/énaction</span>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-date">2013</div>
+                <div class="entry-title">Premiers écrits sur la con-quête et la vulnérabilité</div>
+                <div class="entry-description">Philippe pose les concepts de con-quête (la conquête de soi) et de vulnérabilité, fondamentaux pour son épistémologie. Récusation du modèle médical du handicap.</div>
+                <div class="entry-concepts">
+                    <span class="concept-tag orange">con-quête</span>
+                    <span class="concept-tag orange">vulnérabilité</span>
+                    <span class="concept-tag purple">corps</span>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-date">15 mars 2015</div>
+                <div class="entry-title">« Je serai un homme » — École de Paris du Management</div>
+                <div class="entry-description">Première grande prise de parole publique. Philippe expose sa vision de l'autonomie malgré la dépendance extrême, et rejette le modèle de l'institution « occupationnelle ».</div>
+                <div class="entry-quote">« Ma vie, c'est également mon autonomie et ma liberté de construire moi-même mon propre projet de vie, malgré ma très grande dépendance. »</div>
+                <div class="entry-concepts">
+                    <span class="concept-tag orange">autonomie / dépendance</span>
+                    <span class="concept-tag purple">liberté</span>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-date">2016</div>
+                <div class="entry-title">Parution de « Rage d'exister »</div>
+                <div class="entry-description">La première autobiographie intellectuelle, écrite avec Teresa Costa d'Amaral. Devient l'archétype du témoignage de vie : un appel brut à l'affirmation existentielle.</div>
+                <div class="entry-quote">« Merci Philippe pour ton Rage d'exister! Merci de vivre la vie avec passion et de raconter au monde ta Rage d'exister. »</div>
+                <div class="entry-concepts">
+                    <span class="concept-tag orange">rage d'exister</span>
+                    <span class="concept-tag gold">singularité existentielle</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- PHASE II -->
+        <div class="phase phase-2">
+            <h3 class="phase-title">Phase II — L'affirmation publique et l'appel à la fraternité (2017–2019)</h3>
+            <p class="phase-intro">Explosion conceptuelle en 2017: inclusion, fraternité, dignité, pouvoir d'agir, reconnaissance. Philippe devient conférencier actif (ISAAC 2018, CNCPH 2019, Cerisy 2019). L'homme inutile et Hannah Arendt apparaissent en 2019 — le discours se politise.</p>
+
+            <div class="entry">
+                <div class="entry-date">2017</div>
+                <div class="entry-title">Montée de 11 nouveaux concepts majeurs</div>
+                <div class="entry-description">Explosion conceptuelle: inclusion, fraternité, dignité, pouvoir d'agir, reconnaissance, auteur/autrice, PCH, accessibilité universelle, langage vs communication, accompagnement, bricolage. Philippe revendique l'inclusion non comme intégration, mais comme reconnaissance.</div>
+                <div class="entry-quote">« Reconnaître, c'est renaître avec l'autre et chacun, en situation de handicap ou non, a besoin d'être reconnu. »</div>
+                <div class="entry-concepts">
+                    <span class="concept-tag blue">inclusion</span>
+                    <span class="concept-tag blue">fraternité</span>
+                    <span class="concept-tag blue">pouvoir d'agir</span>
+                    <span class="concept-tag blue">reconnaissance</span>
+                    <span class="concept-tag blue">dignité</span>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-date">2018</div>
+                <div class="entry-title">Congrès ISAAC — modes de communication multiples</div>
+                <div class="entry-description">Première communication scientifique formelle. Philippe articule le patchwork de ses moyens de communication — vocaux, gestuels, visuels — comme stratégie pour exister pleinement.</div>
+                <div class="entry-quote">« Je suis convaincu qu'un seul système de communication ne suffit pas. »</div>
+                <div class="entry-concepts">
+                    <span class="concept-tag green">ISAAC</span>
+                    <span class="concept-tag green">langage vs communication</span>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-date">2019</div>
+                <div class="entry-title">Nomination CNCPH et texte pour l'Élysée</div>
+                <div class="entry-description">Engagement intensif dans l'arène institutionnelle. Entrée à la CNCPH, intervention à Cerisy, festival ISAAC Lille. Le concept d'homme inutile paraît. Hannah Arendt entre dans le cadre théorique.</div>
+                <div class="entry-quote">« Je crois profondément que l'expérience personnelle de chaque personne en situation de handicap peut être une contribution décisive. »</div>
+                <div class="entry-concepts">
+                    <span class="concept-tag blue">CNCPH / CQSSE</span>
+                    <span class="concept-tag orange">homme inutile</span>
+                    <span class="concept-tag purple">Hannah Arendt</span>
+                    <span class="concept-tag blue">Cerisy</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- PHASE III -->
+        <div class="phase phase-3">
+            <h3 class="phase-title">Phase III — Le tournant politique et institutionnel (2020–2021)</h3>
+            <p class="phase-intro">2020: la pandémie, les "États Généraux", la lettre à Sophie Cluzel. 2021 est une année charnière: explosion de l'engagement politique (CNCPH/CQSSE dominant), apparition de la pair-expertise, CapDroits, désinstitutionnalisation, CDPH, CIFRE, recherche participative. C'est la politisation maximale.</p>
+
+            <div class="entry">
+                <div class="entry-date">2020</div>
+                <div class="entry-title">Lettre à Sophie Cluzel et textes pour l'Élysée</div>
+                <div class="entry-description">La pandémie révèle l'abandon institutionnel des personnes en situation de handicap. Philippe devient porte-parole d'une révolte silencieuse. Émergence de génération vestiaire, validisme, autodétermination, Hawking.</div>
+                <div class="entry-quote">« Je crois sincèrement que le mouvement est lancé et que Madame Sophie Cluzel en est profondément convaincue. »</div>
+                <div class="entry-concepts">
+                    <span class="concept-tag blue">autodétermination</span>
+                    <span class="concept-tag blue">validisme</span>
+                    <span class="concept-tag blue">génération vestiaire</span>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-date">2021</div>
+                <div class="entry-title">CNCPH/CQSSE et lancement CIFRE</div>
+                <div class="entry-description">Année charnière: 10 nouveaux concepts émergent simultanément (pair-expertise, CapDroits, CDPH, désinstitutionnalisation, CIFRE, recherche participative, duo de compétences, autonomie/dépendance, pair-aidance, vie autonome). Philippe entre dans la recherche académique tout en s'engageant politiquement.</div>
+                <div class="entry-quote">« La pair-expertise est la reconnaissance que les personnes concernées détiennent un savoir irremplaçable. »</div>
+                <div class="entry-concepts">
+                    <span class="concept-tag blue">pair-expertise</span>
+                    <span class="concept-tag blue">CapDroits / CapLab</span>
+                    <span class="concept-tag blue">CDPH / Convention ONU</span>
+                    <span class="concept-tag blue">CIFRE</span>
+                    <span class="concept-tag blue">recherche participative</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- PHASE IV -->
+        <div class="phase phase-4">
+            <h3 class="phase-title">Phase IV — La construction théorique (2022–2023)</h3>
+            <p class="phase-intro">Phase de maturation intellectuelle. Les concepts se complexifient: savoirs situés, justice épistémique, Lévi-Strauss et Sartre entrent dans le cadre théorique. 2023 est l'année la plus productive (264 docs). L'écosystème support et le bien portant émergent. La thèse prend forme.</p>
+
+            <div class="entry">
+                <div class="entry-date">2022</div>
+                <div class="entry-title">Sentiment d'exister et anthropologie politique</div>
+                <div class="entry-description">Sentiment d'exister émerge comme concept clé. Lévi-Strauss entre dans le cadre théorique. Texte majeur sur l'anthropologie politique du handicap.</div>
+                <div class="entry-quote">« Comment la notion de condition peut-elle nous aider à penser l'existence de ceux qui n'ont pas accès au langage ? »</div>
+                <div class="entry-concepts">
+                    <span class="concept-tag orange">sentiment d'exister</span>
+                    <span class="concept-tag purple">Lévi-Strauss</span>
+                    <span class="concept-tag purple">épistémologie</span>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-date">2023</div>
+                <div class="entry-title">Année record de production (264 documents)</div>
+                <div class="entry-description">Justice épistémique, Sartre, bien portant, écosystème support apparaissent. Conférence de Limoges (17 concepts détectés). Philippe consolide sa théorie de la singularité existentielle comme épistémologie politique.</div>
+                <div class="entry-quote">« Rage d'exister... a d'abord voulu rendre compte d'une expérience de vie fondamentale : ce principe de vie est aussi source de connaissances. »</div>
+                <div class="entry-concepts">
+                    <span class="concept-tag purple">savoirs situés</span>
+                    <span class="concept-tag purple">justice épistémique</span>
+                    <span class="concept-tag purple">Sartre</span>
+                    <span class="concept-tag purple">écosystème support</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- PHASE V -->
+        <div class="phase phase-5">
+            <h3 class="phase-title">Phase V — Le virage existentialiste (2024–2025)</h3>
+            <p class="phase-intro">Nouveau tournant philosophique: singularité existentielle apparaît massivement en 2025 (36 occ.), existentialisme et valeur de ma vie en 2024, chrono-normativité et CAA à la première personne en 2025. Le colloque de Cerisy 2025 cristallise cette évolution. La recherche participative et l'émancipation sont au premier plan.</p>
+
+            <div class="entry">
+                <div class="entry-date">2024</div>
+                <div class="entry-title">Intervention ENSTA et soutenance CIFRE</div>
+                <div class="entry-description">Existentialisme et valeur de ma vie émergent comme concepts centraux. Philippe questionne l'autodétermination libérale et la remplace par la singularité existentielle ancrée relationnellement.</div>
+                <div class="entry-quote">« Je pense que l'autodétermination risque une fois de plus participer à la doxa du secteur médico-social souvent en panne d'imagination. »</div>
+                <div class="entry-concepts">
+                    <span class="concept-tag gold">singularité existentielle</span>
+                    <span class="concept-tag gold">existentialisme</span>
+                    <span class="concept-tag gold">valeur de ma vie</span>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-date">2025</div>
+                <div class="entry-title">Colloque Cerisy "Handicap &amp; Inclusion" — événement culminant</div>
+                <div class="entry-description">36 occurrences de singularité existentielle. Colloque majeur cristallisant 15 ans de réflexion. Chrono-normativité et CAA à la première personne émergent. L'existentialisme sartrienne devient le langage unificateur de sa pensée.</div>
+                <div class="entry-quote">« L'orientation générale du colloque est existentielle. Je plaide pour que ce colloque soit considéré comme un événement majeur. »</div>
+                <div class="entry-concepts">
+                    <span class="concept-tag gold">singularité existentielle</span>
+                    <span class="concept-tag purple">chrono-normativité</span>
+                    <span class="concept-tag green">CAA à la première personne</span>
+                    <span class="concept-tag blue">Cerisy</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- PHASE VI -->
+        <div class="phase phase-6">
+            <h3 class="phase-title">Phase VI — La synthèse intégrée (2026)</h3>
+            <p class="phase-intro">Le plus grand volume de production (304 docs). Niches cognitives et utilisateur (critique) apparaissent. Le texte "Tordre le cou à la notion d'utilisateur" (24 concepts) représente une synthèse magistrale. Fondation Anne de Gaulle. CapLab Grenoble. L'intégration de TOUTES les strates antérieures.</p>
+
+            <div class="entry">
+                <div class="entry-date">Janvier 2026</div>
+                <div class="entry-title">Fondation Anne de Gaulle</div>
+                <div class="entry-description">Nouvelle étape institutionnelle. Philippe articule sa vision de l'auteur/autrice comme fondement de toute existence. Intégration de 15 ans de recherche et d'engagement.</div>
+                <div class="entry-quote">« J'ai compris assez tôt que m'exprimer par tous les moyens serait ma condition d'existence. Que j'en serai toujours le principal auteur. »</div>
+                <div class="entry-concepts">
+                    <span class="concept-tag orange">auteur / autrice</span>
+                    <span class="concept-tag gold">singularité existentielle</span>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-date">Février 2026</div>
+                <div class="entry-title">"Tordre le cou à la notion d'utilisateur" — texte-manifeste</div>
+                <div class="entry-description">Synthèse magistrale contre la réduction des personnes handicapées à des "utilisateurs" de services. 24 concepts détectés. Critique de la terminologie capacitaire. Réaffirmation du sujet comme auteur.</div>
+                <div class="entry-concepts">
+                    <span class="concept-tag purple">utilisateur (critique)</span>
+                    <span class="concept-tag purple">niches cognitives</span>
+                    <span class="concept-tag orange">auteur / autrice</span>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-date">Mars 2026</div>
+                <div class="entry-title">CapLab Grenoble et CNCPH à plein régime</div>
+                <div class="entry-description">Consolidation de l'écosystème de recherche participative et d'action politique. 108 occurrences de CNCPH/CQSSE en 2026. L'intégration complète de l'existence (éthique + politique + épistémologie + singularité existentielle) dans un framework cohérent.</div>
+                <div class="entry-concepts">
+                    <span class="concept-tag blue">CapDroits / CapLab</span>
+                    <span class="concept-tag blue">CNCPH / CQSSE</span>
+                    <span class="concept-tag blue">recherche participative</span>
+                </div>
+            </div>
+        </div>
+        <h2>Les six fils conducteurs de la pensée</h2>
+        <p style="margin-bottom: 2rem; color: #a0a0a0;">Six thèmes qui structurent et unifient la trajectoire intellectuelle de Philippe de 2011 à 2026.</p>
+
+        <div class="synthesis-grid">
+            <div class="synthesis-card card-1">
+                <h4 style="color: #e07845;">Du récit à la théorie</h4>
+                <p>L'arc narratif de Philippe: de la rage autobiographique (2016) à la singularité existentielle (2025), en passant par l'engagement politique (2021). 15 ans de construction d'une pensée originale. Le témoignage devient outil de connaissance — non pas exemple anecdotique, mais source de savoir épistémiquement situé.</p>
+            </div>
+
+            <div class="synthesis-card card-2">
+                <h4 style="color: #5ba0d0;">Le pivot de 2021</h4>
+                <p>Année charnière avec 10 concepts émergents simultanément: pair-expertise, CapDroits, CDPH, désinstitutionnalisation, CIFRE. La politisation maximale de Philippe coïncide avec son entrée dans la recherche. L'engagement institutionnel ne remplace pas la réflexion éthique — il la creuse.</p>
+            </div>
+
+            <div class="synthesis-card card-3">
+                <h4 style="color: #c76dd7;">La galaxie conceptuelle</h4>
+                <p>60+ concepts identifiés dans 1353 documents. Trois noyaux gravitationnels: existence (rage, singularité, sentiment), politique (CNCPH, CDPH, autodétermination), épistémologie (savoirs situés, justice épistémique, Varela). Ces trois domaines convergent graduellement vers une pensée unifiée.</p>
+            </div>
+
+            <div class="synthesis-card card-4">
+                <h4 style="color: #d4a843;">La singularité existentielle</h4>
+                <p>Concept-clé de 2025-2026, absente avant. Cristallise 15 ans de réflexion: le corps, la vulnérabilité, l'éthique, la première personne convergent vers cette notion qui est autant existentialiste que politique. Elle remplace progressivement l'autodétermination libérale.</p>
+            </div>
+
+            <div class="synthesis-card card-5">
+                <h4 style="color: #5ba0d0;">Le colloque de Cerisy</h4>
+                <p>De 2019 (première mention) à 2025 (colloque "Handicap &amp; Inclusion"), Cerisy représente la montée en puissance académique. 165 occurrences, 33 documents liés en 2025 seul. Le lieu cristallise la rencontre entre recherche et engagement politique.</p>
+            </div>
+
+            <div class="synthesis-card card-6">
+                <h4 style="color: #e07845;">L'auteur de sa propre vie</h4>
+                <p>Le concept d'auteur/autrice (68 occ.) traverse toute l'œuvre. De 2017 à 2026, Philippe revendique constamment sa position de sujet, non d'objet — d'auteur, non d'utilisateur. La boucle se ferme en 2026 avec le texte contre la notion d'utilisateur.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>Analyse réalisée à partir de 2 288 documents extraits de l'ensemble des dossiers personnels — mars 2026</p>
+        <p style="font-size: 0.85rem; color: #666;">Visualisation : heatmap des 35 concepts clés, stacked bar chart des registres discursifs, timeline chronologique. Toutes les citations sont authentiques, extraites du corpus original.</p>
+    </footer>
+
+    <script>
+        // ===== HEATMAP DATA =====
+        const heatmapData = [
+            ['rage d\'exister', [0, 1, 1, 7, 39, 59, 36, 57, 104, 34, 51, 135]],
+            ['CNCPH / CQSSE', [0, 0, 0, 0, 2, 66, 89, 57, 90, 12, 6, 108]],
+            ['inclusion', [0, 0, 4, 3, 33, 45, 50, 53, 90, 20, 27, 98]],
+            ['pouvoir d\'agir', [0, 0, 1, 0, 16, 64, 58, 60, 51, 22, 11, 74]],
+            ['éthique', [0, 0, 4, 1, 9, 26, 41, 41, 75, 34, 32, 60]],
+            ['autodétermination', [0, 0, 0, 0, 0, 2, 45, 46, 71, 11, 33, 31]],
+            ['Toulouse-Lautrec', [1, 0, 0, 1, 1, 13, 5, 12, 47, 20, 44, 40]],
+            ['Cerisy', [0, 0, 0, 0, 3, 16, 8, 6, 35, 23, 46, 28]],
+            ['vulnérabilité', [0, 0, 2, 0, 19, 23, 24, 28, 16, 5, 11, 25]],
+            ['émancipation', [0, 0, 0, 0, 7, 5, 4, 17, 24, 12, 33, 22]],
+            ['INSHEA / INS HEA', [1, 0, 1, 0, 4, 5, 14, 13, 25, 4, 4, 31]],
+            ['reconnaissance', [0, 0, 1, 0, 0, 4, 13, 25, 7, 6, 25, 21]],
+            ['fraternité', [0, 0, 1, 0, 39, 11, 7, 11, 10, 5, 0, 17]],
+            ['pair-expertise', [0, 0, 0, 0, 0, 0, 13, 28, 24, 7, 7, 22]],
+            ['dignité', [0, 0, 2, 1, 15, 3, 8, 7, 13, 9, 14, 15]],
+            ['recherche participative', [0, 0, 0, 0, 0, 0, 9, 5, 28, 3, 23, 10]],
+            ['désarroi', [0, 0, 0, 0, 0, 3, 14, 19, 16, 12, 1, 11]],
+            ['ISAAC', [0, 0, 0, 2, 4, 2, 0, 1, 32, 8, 11, 15]],
+            ['homme inutile', [0, 0, 0, 0, 6, 4, 1, 16, 11, 11, 14, 12]],
+            ['duo de compétences', [0, 0, 0, 0, 0, 0, 9, 10, 24, 3, 9, 20]],
+            ['génération vestiaire', [0, 0, 0, 0, 0, 7, 7, 26, 13, 2, 0, 14]],
+            ['Varela / énaction', [0, 0, 0, 0, 0, 0, 1, 13, 14, 10, 18, 12]],
+            ['auteur / autrice', [0, 0, 1, 0, 3, 5, 11, 4, 11, 2, 13, 18]],
+            ['PCH', [0, 0, 2, 0, 1, 3, 3, 4, 29, 5, 5, 11]],
+            ['Hannah Arendt', [0, 0, 0, 0, 6, 8, 2, 11, 17, 7, 5, 6]],
+            ['con-quête', [1, 0, 0, 1, 5, 6, 0, 2, 13, 11, 4, 10]],
+            ['première personne', [0, 0, 0, 0, 0, 0, 1, 6, 4, 3, 18, 15]],
+            ['singularité existentielle', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36, 12]],
+            ['épistémologie', [0, 0, 0, 1, 0, 1, 1, 1, 15, 8, 11, 8]],
+            ['polyhandicap', [0, 0, 1, 0, 0, 0, 8, 5, 9, 2, 8, 8]],
+            ['autonomie / dépendance', [0, 0, 0, 0, 0, 0, 12, 17, 4, 3, 1, 3]],
+            ['Stephen Hawking', [0, 0, 0, 0, 0, 5, 4, 8, 7, 1, 4, 10]],
+            ['bricolage', [0, 0, 1, 0, 0, 0, 0, 3, 11, 7, 11, 4]],
+            ['corps', [0, 0, 1, 0, 5, 2, 10, 4, 4, 1, 0, 6]],
+            ['CapDroits / CapLab', [0, 0, 0, 0, 0, 0, 6, 2, 8, 5, 14, 1]]
+        ];
+
+        const years = ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026'];
+
+        function getIntensity(value) {
+            if (value === 0) return 'empty';
+            if (value <= 3) return 'intensity-1';
+            if (value <= 8) return 'intensity-2';
+            if (value <= 15) return 'intensity-3';
+            if (value <= 25) return 'intensity-4';
+            return 'intensity-5';
+        }
+
+        const heatmapGrid = document.getElementById('heatmap-grid');
+        heatmapData.forEach(([concept, values]) => {
+            values.forEach((value, idx) => {
+                const cell = document.createElement('div');
+                cell.className = `heatmap-cell ${getIntensity(value)}`;
+                cell.textContent = value > 0 ? value : '';
+
+                const tooltip = document.createElement('div');
+                tooltip.className = 'heatmap-tooltip';
+                tooltip.textContent = `${concept} (${years[idx]}): ${value}`;
+                cell.appendChild(tooltip);
+
+                heatmapGrid.appendChild(cell);
+            });
+        });
+
+    </script>
+</body>
+</html>
